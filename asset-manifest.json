@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Amitantil-111/bright-future-education.git/static/css/main.a01d2a86.css",
+    "main.js": "/Amitantil-111/bright-future-education.git/static/js/main.de3e8ac6.js",
+    "static/media/student-bg.jpg": "/Amitantil-111/bright-future-education.git/static/media/student-bg.6cf159f49d9f58ca4915.jpg",
+    "index.html": "/Amitantil-111/bright-future-education.git/index.html",
+    "main.a01d2a86.css.map": "/Amitantil-111/bright-future-education.git/static/css/main.a01d2a86.css.map",
+    "main.de3e8ac6.js.map": "/Amitantil-111/bright-future-education.git/static/js/main.de3e8ac6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a01d2a86.css",
+    "static/js/main.de3e8ac6.js"
+  ]
+}
