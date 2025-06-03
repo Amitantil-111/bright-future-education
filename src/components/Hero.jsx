@@ -1,25 +1,28 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { motion } from 'framer-motion'
 
 const Hero = () => {
   return (
-    <section className="bg-cover bg-center h-[90vh] relative" style={{ backgroundImage: `url('/assets/student-bg.jpg')` }}>
-      <div className="bg-black bg-opacity-60 absolute inset-0"></div>
+    <div className="relative bg-cover bg-center h-[85vh] flex items-center justify-center text-white" style={{ backgroundImage: `url('/images/hero.jpg')` }}>
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4"
+        className="relative z-10 text-center px-6"
       >
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">Bright Future Education</h1>
-        <p className="text-lg md:text-2xl mb-6 max-w-2xl">Empowering students through quality learning and modern teaching methods.</p>
-        <Link to="/courses" className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition duration-300">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Welcome to Bright Future Education</h1>
+        <p className="text-lg md:text-2xl mb-6 drop-shadow">Empowering students for a brighter tomorrow</p>
+        <motion.a
+          whileHover={{ scale: 1.1 }}
+          href="/courses"
+          className="bg-yellow-400 hover:bg-yellow-300 text-black font-semibold py-3 px-6 rounded-full transition duration-300"
+        >
           Explore Courses
-        </Link>
+        </motion.a>
       </motion.div>
-    </section>
-  );
-};
+    </div>
+  )
+}
 
-export default Hero;
+export default Hero
