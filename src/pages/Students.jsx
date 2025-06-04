@@ -1,36 +1,65 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
 
-const studentImages = [1, 2, 3, 4, 5, 6];
+const students = [
+  {
+    name: "Anjali Sharma",
+    image: "/images/students/student1.png",
+    testimonial: "Bright Future Education ne meri life badal di. Excellent guidance!",
+    award: "Top Scorer 2024"
+  },
+  {
+    name: "Rahul Verma",
+    image: "/images/students/student2.png",
+    testimonial: "Yahaan ke teachers bohot cooperative hain. Thank you BFE!",
+    award: "Best Science Project"
+  },
+  {
+    name: "Priya Singh",
+    image: "/images/students/student3.png",
+    testimonial: "Yeh institute mere sapne sach kar raha hai!",
+    award: "Outstanding Performance"
+  },
+  {
+    name: "Karan Mehta",
+    image: "/images/students/student4.png",
+    testimonial: "Main IIT ke liye yahan prepare kar raha hoon. Faculty is superb.",
+    award: "Math Wizard Award"
+  },
+  {
+    name: "Neha Yadav",
+    image: "/images/students/student5.png",
+    testimonial: "Best learning environment and regular tests helped me a lot.",
+    award: "Top Ranker (District Level)"
+  },
+  {
+    name: "Amit Chaudhary",
+    image: "/images/students/student6.png",
+    testimonial: "BFE ki wajah se mujhe scholarship mili. Highly recommended!",
+    award: "Scholarship Winner"
+  }
+];
 
 const Students = () => {
   return (
-    <div className="min-h-screen bg-gray-100 py-16 px-6">
-      <motion.h1
-        className="text-4xl font-bold text-center text-blue-700 mb-12"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        Our Bright Students
-      </motion.h1>
-
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {studentImages.map((num, index) => (
-          <motion.div
-            key={num}
-            className="overflow-hidden rounded-2xl shadow-lg"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
+    <div className="min-h-screen px-4 py-16 bg-gradient-to-br from-blue-100 to-purple-100">
+      <h2 className="text-4xl font-bold text-center mb-10 text-blue-900">Our Star Students</h2>
+      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+        {students.map((student, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition duration-300"
           >
             <img
-              src={`/students/student${num}.jpg`}
-              alt={`Student ${num}`}
-              className="w-full h-72 object-cover hover:scale-105 transition-transform duration-300"
+              src={student.image}
+              alt={student.name}
+              className="w-full h-64 object-cover rounded-xl mb-4"
             />
-          </motion.div>
+            <h3 className="text-xl font-semibold text-blue-700">{student.name}</h3>
+            <p className="text-sm text-gray-600 italic mt-2">"{student.testimonial}"</p>
+            <div className="mt-4 text-sm font-medium text-green-700">
+              🏆 {student.award}
+            </div>
+          </div>
         ))}
       </div>
     </div>

@@ -1,50 +1,34 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from "react";
 
-const testimonials = [
-  {
-    name: "Riya Sharma",
-    text: "This institute changed my life! The teachers are amazing.",
-  },
-  {
-    name: "Aman Verma",
-    text: "Highly recommend Bright Future Education for serious learners.",
-  },
-  {
-    name: "Pooja Singh",
-    text: "The learning environment is excellent!",
-  },
-]
+const studentImages = [
+  "/students/student1.jpg",
+  "/students/student2.jpg",
+  "/students/student3.jpg",
+  "/students/student4.jpg",
+  "/students/student5.jpg",
+  "/students/student6.jpg",
+];
 
 const Testimonials = () => {
   return (
-    <section className="py-16 bg-gray-100">
-      <div className="container mx-auto px-4 text-center">
-        <motion.h2
-          className="text-3xl font-bold mb-12"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          What Our Students Say
-        </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((t, index) => (
-            <motion.div
-              key={index}
-              className="bg-white p-6 rounded-xl shadow-md"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.5 }}
-            >
-              <p className="text-gray-700 italic mb-4">"{t.text}"</p>
-              <h4 className="text-lg font-semibold">{t.name}</h4>
-            </motion.div>
-          ))}
-        </div>
+    <section className="py-20 bg-white text-center">
+      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-blue-700">What Our Students Say</h2>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {studentImages.map((src, idx) => (
+          <div key={idx} className="bg-gray-100 p-4 rounded-lg shadow hover:scale-105 transition">
+            <img
+              src={src}
+              alt={`Student ${idx + 1}`}
+              className="w-full h-60 object-cover rounded-lg mb-4"
+            />
+            <p className="text-gray-700 text-sm">
+              “Bright Future helped me grow and shine academically. Thank you!”
+            </p>
+          </div>
+        ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Testimonials
+export default Testimonials;

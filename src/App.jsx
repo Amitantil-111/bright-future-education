@@ -1,31 +1,28 @@
-// App.jsx
+// src/App.jsx
+
 import React from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import Hero from "./components/Hero";
 import About from "./pages/About";
 import Courses from "./pages/Courses";
 import Students from "./pages/Students";
 import Contact from "./pages/Contact";
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen">
-        <Navbar />
-        <div className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/students" element={<Students />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </div>
-        <Footer />
-      </div>
-    </Router>
+    <HashRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/students" element={<Students />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Footer />
+    </HashRouter>
   );
 }
 
