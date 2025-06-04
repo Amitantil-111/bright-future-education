@@ -1,23 +1,53 @@
-import React from 'react'
+import React from "react";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="p-8 max-w-5xl mx-auto">
-      <h2 className="text-4xl font-bold text-center mb-6">About Bright Future Education</h2>
-      <p className="text-gray-700 text-lg leading-relaxed mb-6">
-        Bright Future Education is an educational institute committed to building the future of young minds. Our aim is to
-        make education accessible, innovative, and effective for students of all backgrounds.
-      </p>
-      <p className="text-gray-700 text-lg leading-relaxed mb-6">
-        We provide academic coaching, personal mentoring, and skill development programs for students from classes 6th to 12th.
-        Our curriculum focuses on Mathematics, Science, English, Hindi, General Knowledge, and Computer Education.
-      </p>
-      <p className="text-gray-700 text-lg leading-relaxed">
-        We believe that every student has potential. With our dedicated teachers, interactive classrooms, and modern tools, we
-        aim to bring out the best in each learner.
-      </p>
-    </div>
-  )
-}
+    <div className="bg-white min-h-screen py-16 px-6">
+      <motion.h1
+        className="text-4xl font-bold text-center text-blue-700 mb-12"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        About Bright Future Education
+      </motion.h1>
 
-export default About
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+        {/* Mission */}
+        <motion.div
+          className="bg-blue-50 p-8 rounded-2xl shadow"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <h2 className="text-2xl font-semibold text-blue-600 mb-4">Our Mission</h2>
+          <p className="text-gray-700 leading-relaxed">
+            At Bright Future Education, our mission is to empower students with
+            the knowledge and skills needed to succeed in academics and life.
+            We believe in personalized teaching, interactive learning, and
+            consistent support to build strong foundations for every student.
+          </p>
+        </motion.div>
+
+        {/* Vision */}
+        <motion.div
+          className="bg-blue-50 p-8 rounded-2xl shadow"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <h2 className="text-2xl font-semibold text-blue-600 mb-4">Our Vision</h2>
+          <p className="text-gray-700 leading-relaxed">
+            Our vision is to become a leading educational platform that
+            transforms students into confident and capable individuals. We aim
+            to nurture curiosity, promote critical thinking, and create a
+            supportive environment that fosters academic and personal growth.
+          </p>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+export default About;

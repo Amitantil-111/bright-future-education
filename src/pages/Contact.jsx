@@ -1,60 +1,66 @@
-import React from 'react'
+import React from "react";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <div className="p-8 max-w-4xl mx-auto">
-      <h2 className="text-4xl font-bold text-center mb-10">Contact Us</h2>
-      
-      <div className="grid md:grid-cols-2 gap-10">
-        
-        {/* Contact Form */}
-        <form className="space-y-4">
-          <div>
-            <label className="block mb-1 font-medium">Name</label>
-            <input
-              type="text"
-              className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter your name"
-            />
-          </div>
+    <div className="min-h-screen bg-white py-16 px-6">
+      <motion.h1
+        className="text-4xl font-bold text-center text-blue-700 mb-8"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        Contact Us
+      </motion.h1>
 
-          <div>
-            <label className="block mb-1 font-medium">Email</label>
-            <input
-              type="email"
-              className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter your email"
-            />
-          </div>
-
-          <div>
-            <label className="block mb-1 font-medium">Message</label>
-            <textarea
-              rows="4"
-              className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Type your message"
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-          >
-            Send Message
-          </button>
-        </form>
-
-        {/* Personal Details */}
-        <div className="bg-gray-100 rounded-xl p-6 shadow-md">
-          <h3 className="text-2xl font-semibold mb-4">Contact Details</h3>
-          <p><strong>Name:</strong> Amit</p>
-          <p><strong>Phone:</strong> 8053311343</p>
-          <p><strong>Email:</strong> amitantil0098@gmail.com</p>
-          <p><strong>Location:</strong> Sonipat, Haryana</p>
+      <motion.form
+        className="max-w-2xl mx-auto bg-gray-100 p-8 rounded-2xl shadow-lg"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        action="mailto:amitantil0098@gmail.com"
+        method="POST"
+        encType="text/plain"
+      >
+        <div className="mb-6">
+          <label className="block text-gray-700 font-semibold mb-2">Name</label>
+          <input
+            type="text"
+            name="Name"
+            required
+            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
         </div>
-      </div>
-    </div>
-  )
-}
 
-export default Contact
+        <div className="mb-6">
+          <label className="block text-gray-700 font-semibold mb-2">Email</label>
+          <input
+            type="email"
+            name="Email"
+            required
+            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        <div className="mb-6">
+          <label className="block text-gray-700 font-semibold mb-2">Message</label>
+          <textarea
+            name="Message"
+            rows="5"
+            required
+            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          className="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300"
+        >
+          Send Message
+        </button>
+      </motion.form>
+    </div>
+  );
+};
+
+export default Contact;

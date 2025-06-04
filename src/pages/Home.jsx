@@ -1,6 +1,45 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
+// Trusted Section Component
+const TrustedByStudents = () => {
+  const images = [1, 2, 3, 4, 5, 6];
+
+  return (
+    <section className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl font-bold text-center text-gray-800 mb-4"
+        >
+          10000+ Students Trusted Us
+        </motion.h2>
+        <p className="text-center text-gray-600 mb-10">
+          Bright Future Education is empowering students with the best courses.
+        </p>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+        >
+          {images.map((num) => (
+            <img
+              key={num}
+              src={`/students/student${num}.jpg`}
+              alt={`Student ${num}`}
+              className="w-full h-64 object-cover rounded-xl shadow-md"
+            />
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 const Home = () => {
   return (
     <div>
@@ -40,6 +79,9 @@ const Home = () => {
           ))}
         </div>
       </div>
+
+      {/* ✅ Trusted by Students Section */}
+      <TrustedByStudents />
 
       {/* Testimonials */}
       <div className="py-12 px-6 bg-gray-100 text-center">
