@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/bright-future-education/static/css/main.362cfff2.css",
-    "main.js": "/bright-future-education/static/js/main.13204e17.js",
+    "main.css": "/bright-future-education/static/css/main.d7585c79.css",
+    "main.js": "/bright-future-education/static/js/main.cbd94e90.js",
     "static/media/logo.png": "/bright-future-education/static/media/logo.1ac09a2bb7301f8e3af9.png",
     "index.html": "/bright-future-education/index.html",
-    "main.362cfff2.css.map": "/bright-future-education/static/css/main.362cfff2.css.map",
-    "main.13204e17.js.map": "/bright-future-education/static/js/main.13204e17.js.map"
+    "main.d7585c79.css.map": "/bright-future-education/static/css/main.d7585c79.css.map",
+    "main.cbd94e90.js.map": "/bright-future-education/static/js/main.cbd94e90.js.map"
   },
   "entrypoints": [
-    "static/css/main.362cfff2.css",
-    "static/js/main.13204e17.js"
+    "static/css/main.d7585c79.css",
+    "static/js/main.cbd94e90.js"
   ]
 }
